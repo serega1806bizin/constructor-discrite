@@ -30,7 +30,7 @@ export const EditPage = () => {
 
   // Подсчёт общей суммы баллов
   const totalPoints = questions.reduce((sum, q) => sum + (q.points || 0), 0);
-  const API_URL = 'https://stradanie-production-f14d.up.railway.app/api/tests';
+  const API_URL = 'https://stradanie-production.up.railway.app/api/tests';
 
   const updateQuestion = (id, updatedData) => {
     setQuestions(prev =>

@@ -31,7 +31,7 @@ export const ConstructorPage = () => {
 
   const totalPoints = questions.reduce((sum, q) => sum + q.points, 0);
 
-  const API_URL = 'https://stradanie-production-f14d.up.railway.app/api/tests';
+  const API_URL = 'https://stradanie-production.up.railway.app/api/tests';
 
   // Уведомление об успехе
   const openSuccessNotification = useCallback(() => {

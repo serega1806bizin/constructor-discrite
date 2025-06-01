@@ -52,14 +52,14 @@ export const DetailsTask = () => {
     setIsLoading(true);
     try {
       const testRes = await fetch(
-        `https://stradanie-production-f14d.up.railway.app/api/tests/${taskId}`,
+        `https://stradanie-production.up.railway.app/api/tests/${taskId}`,
       );
       const testData = await testRes.json();
 
       setTest(testData);
 
       const answersRes = await fetch(
-        `https://stradanie-production-f14d.up.railway.app/api/answers/${taskId}`,
+        `https://stradanie-production.up.railway.app/api/answers/${taskId}`,
       );
       const answersData = await answersRes.json();
       const formattedData = answersData.map(item => ({
@@ -85,7 +85,7 @@ export const DetailsTask = () => {
     async testId => {
       try {
         const res = await fetch(
-          `https://stradanie-production-f14d.up.railway.app/api/tests/${testId}`,
+          `https://stradanie-production.up.railway.app/api/tests/${testId}`,
           {
             method: 'DELETE',
           },
@@ -179,7 +179,7 @@ export const DetailsTask = () => {
     recognition.start();
   }, [onSearch]);
 
-  const url = `https://serega1806bizin.github.io/kursova-robota/#/test/${taskId}`;
+  const url = `https://serega1806bizin.github.io/constructor-discrite/#/test/${taskId}`;
 
   const copyUrl = useCallback(async () => {
     try {

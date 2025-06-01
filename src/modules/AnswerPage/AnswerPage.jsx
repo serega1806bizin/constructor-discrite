@@ -33,12 +33,12 @@ export const AnswerPage = () => {
       setIsLoading(true);
       try {
         const testRes = await fetch(
-          `https://stradanie-production-f14d.up.railway.app/api/tests/${testId}`,
+          `https://stradanie-production.up.railway.app/api/tests/${testId}`,
         );
         const testData = await testRes.json();
 
         const answerRes = await fetch(
-          `https://stradanie-production-f14d.up.railway.app/api/answers/answer/${answerId}`,
+          `https://stradanie-production.up.railway.app/api/answers/answer/${answerId}`,
         );
         const answerData = await answerRes.json();
 

@@ -34,7 +34,7 @@ export const FormPage = () => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://stradanie-production-f14d.up.railway.app/api/tests/${testId}`,
+      `https://stradanie-production.up.railway.app/api/tests/${testId}`,
     )
       .then(res => {
         if (!res.ok) {
@@ -209,7 +209,7 @@ export const FormPage = () => {
 
     setIsSubmitting(true);
 
-    fetch('https://stradanie-production-f14d.up.railway.app/submit', {
+    fetch('https://stradanie-production.up.railway.app/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(submissionData),

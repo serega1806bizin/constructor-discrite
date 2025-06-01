@@ -242,7 +242,7 @@ export const TaskItem = ({
                 formData.append('questionId', id);
                 formData.append('images', file);
                 const response = await axios.post(
-                  'https://stradanie-production-f14d.up.railway.app/upload',
+                  'https://stradanie-production.up.railway.app/upload',
                   formData,
                   { headers: { 'Content-Type': 'multipart/form-data' } },
                 );

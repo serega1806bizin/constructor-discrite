@@ -39,7 +39,7 @@ export const ProductPage = () => {
       setError(null);
       try {
         const res = await axios.get(
-          'https://stradanie-production-f14d.up.railway.app/api/tests',
+          'https://stradanie-production.up.railway.app/api/tests',
         );
 
         setTasks(res.data);
