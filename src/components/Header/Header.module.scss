@@ -1,0 +1,119 @@
+@use '../../utils/variables.scss' as *;
+@use '../../utils/mixins.scss' as *;
+
+html, body {
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logoLink {
+    display: flex;
+  }
+
+  &__logo {
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+
+    @include on-desktop {
+      height: 64px;
+      width: 64px;
+      margin-right: 24px;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__navbar {
+    display: none;
+    gap: 32px;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__navbarItem {
+    @include uppercase;
+
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $secondary;
+    text-decoration: none;
+    padding-block: 17px;
+
+    @include on-desktop {
+      padding-block: 25px;
+    }
+  }
+
+  &__navbarItem:hover {
+    color: $primary;
+  }
+
+  &__iconsContainer {
+    display: flex;
+  }
+
+  &__menuButton {
+    @include menu-close-button;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include hover(transform, scale(0.98));
+  }
+
+  &__menuButton:hover {
+    box-shadow: $border-color 0 0 0 1px;
+  }
+
+  &__menuIcon {
+    height: 16px;
+    width: 16px;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__closeIcon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+.is-active {
+  color: $primary;
+  border-bottom: 3px solid $primary;
+}

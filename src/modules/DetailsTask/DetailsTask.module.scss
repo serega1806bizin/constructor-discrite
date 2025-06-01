@@ -1,0 +1,114 @@
+@use '../../utils/mixins.scss' as *;
+@use '../../utils/variables.scss' as *;
+
+.productDetailsContainer {
+  background-color: $main-page-color;
+}
+
+.productDetails {
+  @include content-padding-inline;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    gap: 8px;
+  }
+
+  &__breadcrumbsHomeIcon {
+    background-image: url(/img/icons/home-icon.svg);
+    height: 16px;
+    min-width: 16px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__breadcrumbsArrowIcon {
+    background-image: url(/img/icons/arrow-right-icon.svg);
+    height: 16px;
+    min-width: 16px;
+  }
+
+  &__breadcrumbsCategory {
+    @include small-text;
+
+    font-weight: 600;
+    color: $secondary;
+    text-decoration: none;
+    line-height: normal;
+  }
+
+  &__breadcrumbsCategory:hover {
+    color: $primary
+  }
+
+  &__breadcrumbsName {
+    @include small-text;
+
+    font-weight: 00;
+    color: $secondary;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: normal;
+  }
+
+  &__back {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    margin-top: 24px;
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+  }
+
+  &__backArrow {
+    cursor: pointer;
+    background-image: url(/img/buttons/swipe-button-left.svg);
+    height: 16px;
+    width: 16px;
+    border: 0;
+    background-color: $main-page-color;
+  }
+
+  &__backText {
+    cursor: pointer;
+
+    @include small-text;
+
+    color: $secondary;
+    text-decoration: none;
+    line-height: normal;
+    border: 0;
+    background-color: $main-page-color;
+    padding: 0;
+  }
+
+  &__backText:hover {
+    color: $primary
+  }
+
+  &__title {
+    margin-bottom: 3px;
+
+    @include on-tablet {
+      margin-bottom: 4px;
+    }
+  }
+
+}
